@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thakshila — Software Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F7F6F3;
+    --paper-dim:#F1EFEA;
+    --ink:#1C1E22;
+    --slate:#6B7280;
+    --signal:#1F7A5C;
+    --signal-dim:#E7F1EC;
+    --hairline:#DEDBD3;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
+  }
+  a{color:inherit;}
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--signal);
+    outline-offset:3px;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 28px;}
+  .mono{font-family:'JetBrains Mono',monospace;}
+  .serif{font-family:'Fraunces',serif;}
+
+  /* ---------- Nav ---------- */
+  nav{
+    position:sticky; top:0; z-index:10;
+    background:rgba(247,246,243,0.88);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--hairline);
+  }
+  nav .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    height:56px;
+  }
+  nav .brand{
+    font-family:'JetBrains Mono',monospace;
+    font-size:13px; font-weight:500;
+    letter-spacing:0.02em;
+  }
+  nav .brand .dot{color:var(--signal);}
+  nav ul{list-style:none; display:flex; gap:26px;}
+  nav a{
+    font-size:13px; text-decoration:none; color:var(--slate);
+    transition:color 0.15s ease;
+  }
+  nav a:hover{color:var(--ink);}
+
+  /* ---------- Hero ---------- */
+  header.hero{padding:88px 0 64px;}
+  .status-chip{
+    display:inline-flex; align-items:center; gap:7px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px; color:var(--signal);
+    background:var(--signal-dim);
+    border:1px solid #CFE6DA;
+    padding:5px 11px 5px 9px;
+    border-radius:100px;
+    margin-bottom:26px;
+  }
+  .status-chip .pulse{
+    width:6px; height:6px; border-radius:50%;
+    background:var(--signal);
+    animation:pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse{
+    0%,100%{opacity:1;}
+    50%{opacity:0.35;}
+  }
+  h1.name{
+    font-family:'Fraunces',serif;
+    font-size:52px;
+    font-weight:500;
+    line-height:1.08;
+    letter-spacing:-0.01em;
+    margin-bottom:14px;
+  }
+  .hero .role{
+    font-size:19px;
+    color:var(--slate);
+    margin-bottom:22px;
+    max-width:520px;
+  }
+  .hero .role strong{color:var(--ink); font-weight:500;}
+  .hero p.bio{
+    font-size:15.5px;
+    color:#454A52;
+    max-width:520px;
+    margin-bottom:30px;
+  }
+  .hero-links{display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:13px;
+    text-decoration:none;
+    padding:10px 16px;
+    border-radius:6px;
+    border:1px solid var(--hairline);
+    transition:all 0.15s ease;
+  }
+  .btn.primary{
+    background:var(--ink); color:var(--paper); border-color:var(--ink);
+  }
+  .btn.primary:hover{background:#33363c;}
+  .btn.ghost:hover{border-color:var(--ink); background:var(--paper-dim);}
+
+  /* ---------- Section shared ---------- */
+  section{padding:56px 0;}
+  section + section{border-top:1px solid var(--hairline);}
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    color:var(--signal);
+    letter-spacing:0.04em;
+    margin-bottom:8px;
+  }
+  h2.section-title{
+    font-family:'Fraunces',serif;
+    font-size:26px;
+    font-weight:500;
+    margin-bottom:34px;
+  }
+
+  /* ---------- Experience (build log) ---------- */
+  .log{position:relative; padding-left:26px;}
+  .log::before{
+    content:'';
+    position:absolute; left:5px; top:6px; bottom:6px;
+    width:1px; background:var(--hairline);
+  }
+  .entry{position:relative; margin-bottom:38px;}
+  .entry:last-child{margin-bottom:0;}
+  .entry::before{
+    content:'';
+    position:absolute; left:-26px; top:6px;
+    width:9px; height:9px; border-radius:50%;
+    background:var(--paper);
+    border:2px solid var(--signal);
+  }
+  .entry-head{
+    display:flex; justify-content:space-between; align-items:baseline;
+    flex-wrap:wrap; gap:8px 16px;
+    margin-bottom:6px;
+  }
+  .entry-role{font-size:17px; font-weight:600;}
+  .entry-dates{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px; color:var(--slate);
+  }
+  .entry-org{
+    font-size:14px; color:var(--signal); font-weight:500;
+    margin-bottom:10px;
+  }
+  .entry ul{list-style:none;}
+  .entry li{
+    font-size:14.5px; color:#454A52;
+    padding-left:16px; position:relative;
+    margin-bottom:6px;
+  }
+  .entry li::before{
+    content:'—'; position:absolute; left:0; color:var(--slate);
+  }
+  .status-tag{
+    display:inline-block;
+    font-family:'JetBrains Mono',monospace;
+    font-size:10.5px; letter-spacing:0.03em;
+    color:var(--signal);
+    background:var(--signal-dim);
+    padding:3px 8px;
+    border-radius:4px;
+    margin-top:10px;
+  }
+
+  /* ---------- Skills ---------- */
+  .skill-group{margin-bottom:24px;}
+  .skill-group:last-child{margin-bottom:0;}
+  .skill-group h3{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px; color:var(--slate);
+    margin-bottom:12px; letter-spacing:0.02em;
+  }
+  .tags{display:flex; flex-wrap:wrap; gap:8px;}
+  .tag{
+    font-size:13px;
+    padding:6px 12px;
+    border:1px solid var(--hairline);
+    border-radius:6px;
+    background:var(--paper-dim);
+  }
+
+  /* ---------- Projects (placeholder) ---------- */
+  .proj-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  .proj-card{
+    border:1px dashed var(--hairline);
+    border-radius:10px;
+    padding:22px;
+    min-height:150px;
+    display:flex; flex-direction:column; justify-content:space-between;
+  }
+  .proj-card .ph-label{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px; color:var(--slate);
+    text-transform:uppercase; letter-spacing:0.04em;
+  }
+  .proj-card h4{
+    font-size:15px; color:#9CA0A6; font-weight:500;
+    margin:10px 0 6px;
+  }
+  .proj-card p{font-size:13px; color:#B0B4B9;}
+  @media (max-width:600px){ .proj-grid{grid-template-columns:1fr;} }
+
+  /* ---------- Education ---------- */
+  .edu-entry{margin-bottom:20px;}
+  .edu-entry:last-child{margin-bottom:0;}
+  .edu-degree{font-size:15.5px; font-weight:600;}
+  .edu-meta{font-size:13.5px; color:var(--slate); margin-top:2px;}
+  .edu-detail{font-size:14px; color:#454A52; margin-top:6px;}
+
+  /* ---------- Certs ---------- */
+  .cert-list{list-style:none;}
+  .cert-list li{
+    font-size:14.5px; padding:10px 0;
+    border-bottom:1px solid var(--hairline);
+    display:flex; justify-content:space-between; gap:12px;
+  }
+  .cert-list li:last-child{border-bottom:none;}
+  .cert-list .cert-org{color:var(--slate); font-size:13px; white-space:nowrap;}
+
+  /* ---------- Footer ---------- */
+  footer{padding:56px 0 72px;}
+  footer .foot-title{
+    font-family:'Fraunces',serif; font-size:26px; font-weight:500;
+    margin-bottom:12px;
+  }
+  footer p{color:var(--slate); font-size:14.5px; max-width:440px; margin-bottom:26px;}
+  footer .foot-links{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:40px;}
+  footer .bottom-line{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11.5px; color:#A8ACB2;
+    padding-top:24px; border-top:1px solid var(--hairline);
+  }
+
+  @media (max-width:600px){
+    h1.name{font-size:38px;}
+    header.hero{padding:56px 0 44px;}
+    nav ul{gap:16px;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">thakshila<span class="dot">.</span>dev</div>
+    <ul>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="status-chip"><span class="pulse"></span>Open to software engineering roles — Wellington, NZ</div>
+    <h1 class="name">Thakshila</h1>
+    <p class="role">Software Engineer — <strong>backend-leaning full-stack</strong>, four years building and shipping production systems.</p>
+    <p class="bio">
+      I build backend systems and full-stack applications with Java and Spring Boot, and ship them through
+      Docker, Kubernetes, and CI/CD pipelines. Currently completing a Master's in IT (Data Science) after
+      four years across travel, hospitality, and events platforms — most recently full-stack at Lexion Labs.
+    </p>
+    <div class="hero-links">
+      <a class="btn primary" href="#contact">Get in touch</a>
+      <a class="btn ghost" href="#" target="_blank" rel="noopener">GitHub ↗</a>
+      <a class="btn ghost" href="#" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+  </div>
+</header>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="eyebrow">// 01 — WORK</div>
+    <h2 class="section-title">Experience</h2>
+
+    <div class="log">
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-role">Software Engineering Intern</span>
+          <span class="entry-dates mono">Lexion Labs · Wellington</span>
+        </div>
+        <div class="entry-org">Full-stack — Node.js, React, and backend systems</div>
+        <ul>
+          <li>Work across two SaaS products: a service-business booking platform and an event management platform for musical and cultural events</li>
+          <li>Contribute full stack, from backend APIs through to React front-end features</li>
+        </ul>
+        <span class="status-tag">STATUS: IN PROGRESS</span>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-role">Software Engineer</span>
+          <span class="entry-dates mono">CodeGen International · Sri Lanka</span>
+        </div>
+        <div class="entry-org">Travelbox platform — Java, Spring Boot, REST, SQL</div>
+        <ul>
+          <li>Owned and built the <span class="mono" style="font-size:13px;">tbx-setup</span> module: development, issue resolution, and mentoring junior engineers</li>
+          <li>Delivered large-scale features under pressure for major international clients</li>
+          <li>Took on production support responsibilities, working with Splunk and Dynatrace for monitoring</li>
+          <li>Used Docker, Kubernetes/OpenShift, and CI/CD (GitHub Actions, Jenkins, GitLab CI) to ship and operate services</li>
+        </ul>
+        <span class="status-tag">STATUS: SHIPPED</span>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-role">Full Stack Developer</span>
+          <span class="entry-dates mono">Institute of Software Engineering (IJSE) · Sri Lanka</span>
+        </div>
+        <div class="entry-org">Patient management system</div>
+        <ul>
+          <li>Built a full-stack patient management system as part of a hands-on software engineering programme</li>
+        </ul>
+        <span class="status-tag">STATUS: SHIPPED</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="eyebrow">// 02 — STACK</div>
+    <h2 class="section-title">Skills</h2>
+
+    <div class="skill-group">
+      <h3>BACKEND</h3>
+      <div class="tags">
+        <span class="tag">Java</span>
+        <span class="tag">Spring Boot</span>
+        <span class="tag">Hibernate / JPA</span>
+        <span class="tag">REST APIs</span>
+        <span class="tag">Node.js</span>
+        <span class="tag">SQL</span>
+        <span class="tag">PostgreSQL</span>
+        <span class="tag">Redis</span>
+        <span class="tag">ElasticSearch</span>
+        <span class="tag">RabbitMQ</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <h3>FRONTEND</h3>
+      <div class="tags">
+        <span class="tag">React</span>
+        <span class="tag">Angular</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <h3>INFRASTRUCTURE &amp; DEVOPS</h3>
+      <div class="tags">
+        <span class="tag">Docker</span>
+        <span class="tag">Kubernetes / OpenShift</span>
+        <span class="tag">GitHub Actions</span>
+        <span class="tag">Jenkins</span>
+        <span class="tag">GitLab CI</span>
+        <span class="tag">AWS (S3, Lambda, EC2)</span>
+        <span class="tag">Azure (pursuing AZ-204)</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <h3>OBSERVABILITY &amp; TOOLING</h3>
+      <div class="tags">
+        <span class="tag">Splunk</span>
+        <span class="tag">Dynatrace</span>
+        <span class="tag">Swagger / OpenAPI</span>
+        <span class="tag">Micro-frontends</span>
+        <span class="tag">GitHub Copilot</span>
+        <span class="tag">Claude Code</span>
+        <span class="tag">Cursor</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="eyebrow">// 03 — PROJECTS</div>
+    <h2 class="section-title">Projects</h2>
+    <div class="proj-grid">
+      <div class="proj-card">
+        <div>
+          <span class="ph-label">Placeholder</span>
+          <h4>Project name</h4>
+          <p>Short description, live link, and GitHub repo go here.</p>
+        </div>
+        <span class="ph-label">— add project —</span>
+      </div>
+      <div class="proj-card">
+        <div>
+          <span class="ph-label">Placeholder</span>
+          <h4>Project name</h4>
+          <p>Short description, live link, and GitHub repo go here.</p>
+        </div>
+        <span class="ph-label">— add project —</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="eyebrow">// 04 — EDUCATION</div>
+    <h2 class="section-title">Education</h2>
+
+    <div class="edu-entry">
+      <div class="edu-degree">Master's in Information Technology, Data Science</div>
+      <div class="edu-meta">Whitecliffe College · Wellington</div>
+      <div class="edu-detail">Research: "Predicting Mental Health Outcomes with Data Science: A Comprehensive Approach," including a Python web application.</div>
+    </div>
+
+    <div class="edu-entry">
+      <div class="edu-degree">BSc, Physical Science</div>
+      <div class="edu-meta">University of Peradeniya · Sri Lanka</div>
+      <div class="edu-detail">Built an Inventory Management System as a core project.</div>
+    </div>
+
+    <h3 style="font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--slate); margin:30px 0 12px; letter-spacing:0.02em;">CERTIFICATIONS</h3>
+    <ul class="cert-list">
+      <li>Oracle Cloud Infrastructure 2024 Certified Foundations Associate <span class="cert-org mono">Oracle</span></li>
+      <li>Comprehensive Master Java Developer <span class="cert-org mono">IJSE</span></li>
+      <li>Web Application Design &amp; Development <span class="cert-org mono">NIBM</span></li>
+      <li>Diploma in IT &amp; E-Commerce <span class="cert-org mono">Pearson</span></li>
+    </ul>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="status-chip"><span class="pulse"></span>STATUS: OPEN TO WORK</div>
+    <div class="foot-title">Let's talk.</div>
+    <p>Looking for software engineering roles at established companies in Wellington. Happy to talk about backend systems, full-stack work, or anything travel-tech.</p>
+    <div class="foot-links">
+      <a class="btn primary" href="mailto:you@example.com">Email me</a>
+      <a class="btn ghost" href="#" target="_blank" rel="noopener">GitHub ↗</a>
+      <a class="btn ghost" href="#" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+    <div class="bottom-line">built by hand, no framework required · Wellington, NZ</div>
+  </div>
+</footer>
+
+</body>
+</html>
