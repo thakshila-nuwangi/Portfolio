@@ -11,9 +11,9 @@ const links = [
 export default function Nav() {
   return (
     <nav className="sticky top-0 z-10 bg-paper/90 backdrop-blur-sm border-b border-hairline">
-      <div className="max-w-5xl mx-auto px-7 h-14 flex items-center justify-between">
-        <div className="font-mono text-[13px] font-medium tracking-tight">
-          thakshila<span className="text-signal">.</span>dev
+      <div className="w-full px-8 h-14 flex items-center justify-between">
+        <div className="font-mono text-[13px] font-medium tracking-tight text-signal">
+          thakshila.dev
         </div>
         <div className="flex items-center gap-6">
           <ul className="flex gap-6">
@@ -21,7 +21,7 @@ export default function Nav() {
               <li key={l.href}>
                 <a
                   href={l.href}
-                  className="text-[13px] text-slate hover:text-ink transition-colors"
+                  className="text-[13px] text-signal hover:text-ink transition-colors"
                 >
                   {l.label}
                 </a>
@@ -34,4 +34,3 @@ export default function Nav() {
     </nav>
   )
 }
- 

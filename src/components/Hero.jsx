@@ -23,19 +23,19 @@ export default function Hero() {
         </motion.h1>
 
         <motion.p variants={item} className="text-lg text-slate max-w-2xl mb-5">
-          Software Engineer — <span className="text-ink font-medium">backend-leaning full-stack</span>, four years building and shipping production systems.
+          Software Engineer — <span className="text-ink[#454A52] font-medium">backend-leaning full-stack</span>, four years building and shipping production systems.
         </motion.p>
 
-        <motion.p variants={item} className="text-[15px] text-[#454A52] max-w-2xl mb-8 leading-relaxed text-justify">
+        <motion.p variants={item} className="text-[15px] text-ink max-w-2xl mb-8 leading-relaxed text-justify">
           I'm a Software Engineer with four years of experience building full stack applications, from enterprise backend systems to accessible, user focused frontends.
         </motion.p>
 
-        <motion.p variants={item} className="text-[15px] text-[#454A52] max-w-2xl mb-8 leading-relaxed text-justify">
+        <motion.p variants={item} className="text-[15px] text-ink max-w-2xl mb-8 leading-relaxed text-justify">
           My journey started in Sri Lanka, where I worked across the stack, Java and Spring Boot, React, Angular, Node.js, and SQL, on projects ranging from hospital management systems to booking platforms. Along the way I picked up a habit that's stuck with me: learning new technology fast, and learning it properly.
           Whether it was mastering AWS services from scratch during an internship or diving into accessibility standards for a frontend rebuild, I've always preferred figuring things out hands-on over reading about them.
         </motion.p>
 
-        <motion.p variants={item} className="text-[15px] text-[#454A52] max-w-2xl mb-8 leading-relaxed text-justify">
+        <motion.p variants={item} className="text-[15px] text-ink max-w-2xl mb-8 leading-relaxed text-justify">
           I'm particularly drawn to the technical side of building things that actually hold up in production, scalable APIs, clean database design, CI/CD pipelines that make releases boring in the best way, and the kind of testing discipline that catches problems before customers do.
         </motion.p>
 
@@ -55,7 +55,7 @@ export default function Hero() {
       <motion.div variants={item} className="shrink-0 md:mr-4">
         <div className="w-52 h-52 md:w-72 md:h-72 rounded-2xl overflow-hidden border border-hairline bg-paper-dim">
           <img
-            src="/photo.jpg"
+            src="/thakshila.jpg"
             alt="Thakshila"
             className="w-full h-full object-cover"
             onError={(e) => { e.currentTarget.style.display = 'none' }}

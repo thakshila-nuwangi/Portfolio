@@ -22,8 +22,8 @@
 }
 
 .dark {
-  --color-paper: #17181B;
-  --color-paper-dim: #1E2024;
+  --color-paper: #121212;
+  --color-paper-dim: #121212;
   --color-ink: #F2F1EE;
   --color-ink-hover: #E4E2DD;
   --color-slate: #9198A3;
@@ -31,7 +31,7 @@
   --color-muted: #6B7078;
   --color-faint: #565A61;
   --color-footnote: #5A5F66;
-  --color-signal: #6D214F;
+  --color-signal: #822659;
   --color-signal-dim: #1B2B26;
   --color-signal-border: #2C4A40;
   --color-hairline: #2C2E33;
