@@ -3,7 +3,7 @@ import { skills } from '../data/skills'
 
 export default function Skills() {
   return (
-    <section id="skills" className="min-h-[calc(100vh-3.5rem)] flex flex-col justify-center py-14 border-t border-hairline">
+    <section id="skills" className="py-14 border-t border-hairline">
       <div className="max-w-6xl mx-auto px-7">
         <Reveal>
           <h2 className="font-serif text-[26px] font-medium mb-9 text-signal">Skills</h2>
