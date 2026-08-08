@@ -15,17 +15,17 @@ function ProjectCard({ project, index }) {
       className={
         isPlaceholder
           ? 'border border-dashed border-hairline rounded-xl p-5 min-h-[150px] flex flex-col justify-between'
-          : 'border border-hairline rounded-xl p-5 min-h-[150px] flex flex-col justify-between bg-white/40 hover:border-signal transition-colors'
+          : 'border border-hairline rounded-xl p-5 min-h-[150px] flex flex-col justify-between bg-paper-dim/40 hover:border-signal transition-colors'
       }
     >
       <div>
         <span className="font-mono text-[11px] text-slate uppercase tracking-wide">
           {isPlaceholder ? 'Placeholder' : project.status}
         </span>
-        <h4 className={isPlaceholder ? 'text-[15px] font-medium text-[#9CA0A6] mt-2.5 mb-1.5' : 'text-[16px] font-semibold mt-2.5 mb-1.5'}>
+        <h4 className={isPlaceholder ? 'text-[15px] font-medium text-muted mt-2.5 mb-1.5' : 'text-[16px] font-semibold mt-2.5 mb-1.5'}>
           {project.name}
         </h4>
-        <p className={isPlaceholder ? 'text-[13px] text-[#B0B4B9]' : 'text-[13.5px] text-[#454A52]'}>
+        <p className={isPlaceholder ? 'text-[13px] text-faint' : 'text-[13.5px] text-body'}>
           {project.description}
         </p>
         {!isPlaceholder && project.stack?.length > 0 && (
@@ -61,11 +61,10 @@ function ProjectCard({ project, index }) {
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-14 border-t border-hairline">
-      <div className="max-w-3xl mx-auto px-7">
+    <section id="projects" className="min-h-[calc(100vh-3.5rem)] flex flex-col justify-center py-14 border-t border-hairline">
+      <div className="max-w-6xl mx-auto px-7 w-full">
         <Reveal>
-          <div className="font-mono text-xs text-signal tracking-wide mb-2">// 03 — PROJECTS</div>
-          <h2 className="font-serif text-[26px] font-medium mb-9">Projects</h2>
+          <h2 className="font-serif text-[26px] font-medium mb-9 text-signal">Projects</h2>
         </Reveal>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
