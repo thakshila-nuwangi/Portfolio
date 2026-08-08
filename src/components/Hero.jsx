@@ -23,7 +23,7 @@ export default function Hero() {
         </motion.h1>
 
         <motion.p variants={item} className="text-lg text-slate max-w-2xl mb-5">
-          Software Engineer — <span className="text-ink[#454A52] font-medium">backend-leaning full-stack</span>, four years building and shipping production systems.
+           - Full Stack Developer -
         </motion.p>
 
         <motion.p variants={item} className="text-[15px] text-ink max-w-2xl mb-8 leading-relaxed text-justify">
@@ -43,10 +43,13 @@ export default function Hero() {
           <a href="#contact" className="font-mono text-[13px] px-4 py-2.5 rounded-md bg-ink text-paper border border-ink hover:bg-[#33363c] transition-colors">
             Get in touch
           </a>
-          <a href="#" target="_blank" rel="noopener" className="font-mono text-[13px] px-4 py-2.5 rounded-md border border-hairline hover:border-ink hover:bg-paper-dim transition-colors">
+          <a href="/resume.pdf" download className="font-mono text-[13px] px-4 py-2.5 rounded-md border border-hairline hover:border-ink hover:bg-paper-dim transition-colors">
+            Resume ↓
+          </a>
+          <a href="https://github.com/thakshila-nuwangi" target="_blank" rel="noopener" className="font-mono text-[13px] px-4 py-2.5 rounded-md border border-hairline hover:border-ink hover:bg-paper-dim transition-colors">
             GitHub ↗
           </a>
-          <a href="#" target="_blank" rel="noopener" className="font-mono text-[13px] px-4 py-2.5 rounded-md border border-hairline hover:border-ink hover:bg-paper-dim transition-colors">
+          <a href="https://linkedin.com/in/thakshila-nuwangi" target="_blank" rel="noopener" className="font-mono text-[13px] px-4 py-2.5 rounded-md border border-hairline hover:border-ink hover:bg-paper-dim transition-colors">
             LinkedIn ↗
           </a>
         </motion.div>
