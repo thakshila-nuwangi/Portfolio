@@ -5,14 +5,36 @@
   --color-paper: #F7F6F3;
   --color-paper-dim: #F1EFEA;
   --color-ink: #1C1E22;
+  --color-ink-hover: #33363c;
   --color-slate: #6B7280;
+  --color-body: #454A52;
+  --color-muted: #9CA0A6;
+  --color-faint: #B0B4B9;
+  --color-footnote: #A8ACB2;
   --color-signal: #6D214F;
   --color-signal-dim: #E7F1EC;
+  --color-signal-border: #CFE6DA;
   --color-hairline: #DEDBD3;
 
-  --font-serif: 'Roboto', serif;
+  --font-serif: 'Fraunces', serif;
   --font-sans: 'Inter', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
+}
+
+.dark {
+  --color-paper: #17181B;
+  --color-paper-dim: #1E2024;
+  --color-ink: #F2F1EE;
+  --color-ink-hover: #E4E2DD;
+  --color-slate: #9198A3;
+  --color-body: #B7BCC4;
+  --color-muted: #6B7078;
+  --color-faint: #565A61;
+  --color-footnote: #5A5F66;
+  --color-signal: #6D214F;
+  --color-signal-dim: #1B2B26;
+  --color-signal-border: #2C4A40;
+  --color-hairline: #2C2E33;
 }
 
 html {
@@ -35,6 +57,7 @@ body {
   background: var(--color-paper);
   color: var(--color-ink);
   font-family: var(--font-sans);
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 a:focus-visible, button:focus-visible {
