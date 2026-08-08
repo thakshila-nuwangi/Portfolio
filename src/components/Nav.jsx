@@ -12,9 +12,16 @@ export default function Nav() {
   return (
     <nav className="sticky top-0 z-10 bg-paper/90 backdrop-blur-sm border-b border-hairline">
       <div className="w-full px-8 h-14 flex items-center justify-between">
-        <div className="font-mono text-[13px] font-medium tracking-tight text-signal">
+        <a
+          href="#"
+          onClick={(e) => {
+            e.preventDefault()
+            window.scrollTo({ top: 0, behavior: 'smooth' })
+          }}
+          className="font-mono text-[13px] font-medium tracking-tight text-signal cursor-pointer"
+        >
           thakshila.dev
-        </div>
+        </a>
         <div className="flex items-center gap-6">
           <ul className="flex gap-6">
             {links.map((l) => (
