@@ -1,15 +1,31 @@
 export const skills = [
   {
     group: 'Backend',
-    items: ['Java', 'Spring Boot', 'Hibernate / JPA', 'REST APIs', 'Node.js', 'SQL', 'PostgreSQL', 'Redis', 'ElasticSearch', 'RabbitMQ'],
+    items: ['Java', 'Spring Boot', 'Hibernate / JPA', 'REST APIs', 'Node.js', 'RabbitMQ'],
   },
   {
     group: 'Frontend',
-    items: ['React', 'Angular'],
+    items: ['React', 'Angular', 'Micro Frontends', 'HTML5', 'CSS3', 'Tailwind CSS', 'SASS', 'Accessibility'],
+  },
+  {
+    group: 'Testing',
+    items: ['JUnit', 'Mockito', 'React Testing Library'],
+  },
+  {
+    group: 'Programming & Scripting',
+    items: ['Python', 'JavaScript', 'TypeScript', 'Bash'],
+  },
+  {
+    group: 'Version Control',
+    items: ['Git', 'GitHub', 'GitLab'],
+  },
+  {
+    group: 'Database & Data Management',
+    items: ['SQL', 'PostgreSQL', 'Redis', 'ElasticSearch'],
   },
   {
     group: 'Infrastructure & DevOps',
-    items: ['Docker', 'Kubernetes / OpenShift', 'GitHub Actions', 'Jenkins', 'GitLab CI', 'AWS (S3, Lambda, EC2)', 'Azure (pursuing AZ-204)'],
+    items: ['Docker', 'Kubernetes', 'GitHub Actions', 'Jenkins', 'GitLab CI', 'AWS (S3, Lambda, EC2)', 'Azure (pursuing AZ-204)'],
   },
   {
     group: 'Observability & Tooling',
