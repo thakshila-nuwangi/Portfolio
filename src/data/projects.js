@@ -25,7 +25,7 @@ export const projects = [
     description: 'A lightweight Java ORM built from scratch — mapping objects to database tables using reflection, without relying on Hibernate or JPA.',
     stack: ['Java', 'Maven', 'JDBC'],
     liveUrl: '',
-    repoUrl: 'https://github.com/ThakshilaNuwangi/simple-orm-framework'
+    repoUrl: 'https://github.com/thakshila-nuwangi/ORM-Framework.git'
   },
   {
     name: 'Simple Java App Runner',
